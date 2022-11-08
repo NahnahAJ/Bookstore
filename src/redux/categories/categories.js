@@ -1,5 +1,5 @@
 // Define an action type for checking the status.
-const CHECKSTATS = 'Under construction';
+const CHECKSTATS = 'book-store/redux/CHECKSTATS';
 
 // Set the initial state to be an empty array of categories.
 const defaultCatergory = [];
