@@ -1,6 +1,6 @@
 // Define action types for adding and removing a book.
-export const ADD_BOOK = 'book-store/redux/ADD_BOOK';
-export const REMOVE_BOOK = 'book-store/redux/REMOVE_BOOK';
+export const ADD_BOOK = 'bookstore/books/ADD_BOOK';
+export const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
 
 // Set the initial state to be an empty array of books.
 const defaultState = [];
