@@ -25,6 +25,8 @@ const AddBook = () => {
     // generate a unique id
     // dispatch a corresponding action
     dispatch(addBook({ id: Date.now(), title, author }));
+    setAuthor('');
+    setTitle('');
   };
 
   return (
