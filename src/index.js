@@ -1,3 +1,4 @@
+// Import Redux Provider and your store in the main component of your React app.
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
