@@ -19,9 +19,8 @@ const statusReducer = (state = defaultCatergory, action) => {
 };
 
 // Export Action Creators for your actions.
-export const statusAction = (categories) => ({
+export const statusAction = () => ({
   type: CHECK_STATUS,
-  categories,
 });
 
 export default statusReducer;

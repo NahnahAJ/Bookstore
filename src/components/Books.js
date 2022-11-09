@@ -1,9 +1,9 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Book from './Book';
 import Categories from '../pages/Categories';
-import Form from './Form';
+import AddBook from './AddBook';
 import Navbar from './Navbar';
+import DisplayBooks from './displayBooks';
 
 const Books = () => (
   <>
@@ -13,8 +13,9 @@ const Books = () => (
         path="/"
         element={(
           <div>
-            <Book author="Sam" title="Things" />
-            <Form />
+            <AddBook />
+            <h2>Redux Store:</h2>
+            <DisplayBooks />
           </div>
           )}
       />

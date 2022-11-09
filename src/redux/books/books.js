@@ -3,7 +3,36 @@ export const ADD_BOOK = 'bookstore/books/ADD_BOOK';
 export const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
 
 // Set the initial state to be an empty array of books.
-const defaultState = [];
+// Secondly, change the default state in your books reducer from
+// an empty array to an array with a few books.
+// One of the goals is to display them in your React components.
+const defaultState = [
+  {
+    id: '1',
+    title: 'Book 1',
+    author: 'John-John',
+  },
+  {
+    id: '2',
+    title: 'Book 2',
+    author: 'Jane-Jane',
+  },
+  {
+    id: '3',
+    title: 'Book 3',
+    author: 'Joe-Joe',
+  },
+  {
+    id: '4',
+    title: 'Book 4',
+    author: 'Mary-Mary',
+  },
+  {
+    id: '5',
+    title: 'Book 5',
+    author: 'Mike-Mike',
+  },
+];
 
 // Write your reducer and export it as default.
 const addReducer = (state = defaultState, action) => {
