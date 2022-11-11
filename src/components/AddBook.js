@@ -1,6 +1,6 @@
 import { React, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/books/books';
+import { sendBookToApi } from '../redux/books/books';
 
 // add functionality for "Add new" button click:
 
@@ -24,7 +24,14 @@ const AddBook = () => {
     // Set the data inputs in the local React state (set title and author).
     // generate a unique id
     // dispatch a corresponding action
-    dispatch(addBook({ id: Date.now(), title, author }));
+    dispatch(
+      sendBookToApi({
+        item_id: Date.now(),
+        title,
+        author,
+        category: 'fiction',
+      }),
+    );
     setAuthor('');
     setTitle('');
   };

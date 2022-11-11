@@ -1,63 +1,69 @@
 // Define action types for adding and removing a book.
+import axios from 'axios';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+
 export const ADD_BOOK = 'bookstore/books/ADD_BOOK';
 export const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
+export const GET_BOOK = 'bookstore/books/GET_BOOK';
+const URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/GYyCqiiRoOj0083JgG28/books';
 
-// Set the initial state to be an empty array of books.
-// Secondly, change the default state in your books reducer from
-// an empty array to an array with a few books.
-// One of the goals is to display them in your React components.
-const defaultState = [
-  {
-    id: '1',
-    title: 'Book 1',
-    author: 'John-John',
-  },
-  {
-    id: '2',
-    title: 'Book 2',
-    author: 'Jane-Jane',
-  },
-  {
-    id: '3',
-    title: 'Book 3',
-    author: 'Joe-Joe',
-  },
-  {
-    id: '4',
-    title: 'Book 4',
-    author: 'Mary-Mary',
-  },
-  {
-    id: '5',
-    title: 'Book 5',
-    author: 'Mike-Mike',
-  },
-];
-
-// Write your reducer and export it as default.
-const addReducer = (state = defaultState, action) => {
-  switch (action.type) {
-    // Define state changes for the actions that you created.
-    case ADD_BOOK:
-      return [...state, action.book];
-
-    case REMOVE_BOOK:
-      return state.filter((books) => books.id !== action.id);
-    // In case of unknown action - return the current state.
-    default:
-      return state;
-  }
+const initialState = {
+  books: {},
+  isLoading: true,
 };
 
-// Export Action Creators for your actions.
-export const addBook = (book) => ({
-  type: ADD_BOOK,
-  book,
+export const getBookFromApi = createAsyncThunk(
+  GET_BOOK,
+  async () => {
+    try {
+      const response = await axios.get(URL);
+      return response.data;
+    } catch (error) {
+      return error;
+    }
+  },
+);
+
+export const sendBookToApi = createAsyncThunk(
+  ADD_BOOK,
+  async (book, thunkAPI) => {
+    try {
+      await axios.post(URL, book);
+      return thunkAPI.dispatch(getBookFromApi());
+    } catch (error) {
+      return error;
+    }
+  },
+);
+
+export const removeBookFromApi = createAsyncThunk(
+  REMOVE_BOOK,
+  async (id, thunkAPI) => {
+    try {
+      await axios.delete(`${URL}/${id}`);
+      return thunkAPI.dispatch(getBookFromApi());
+    } catch (error) {
+      return error;
+    }
+  },
+);
+
+const createApiSlice = createSlice({
+  name: 'booksFromApi',
+  initialState,
+  reducers: {},
+  extraReducers: {
+    [getBookFromApi.pending]: (state) => {
+      state.isLoading = true;
+    },
+    [getBookFromApi.fulfilled]: (state, action) => {
+      state.isLoading = false;
+      state.books = action.payload;
+    },
+    [getBookFromApi.rejected]: (state) => {
+      state.isLoading = false;
+    },
+  },
 });
 
-export const removeBook = (id) => ({
-  type: REMOVE_BOOK,
-  id,
-});
-
-export default addReducer;
+export default createApiSlice.reducer;

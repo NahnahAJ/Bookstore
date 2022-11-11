@@ -1,17 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/books';
+import { getBookFromApi, removeBookFromApi } from '../redux/books/books';
 
 // Make sure that list of books displays books from Redux store.
 // Use useSelector to consume the state.
 const DisplayBooks = () => {
+  const totalBooks = [];
   const dispatch = useDispatch();
-  const books = useSelector((state) => state.books);
+  const books = useSelector((state) => state.booksFromApi);
+  const arrayOfBooks = books.books;
+  Object.keys(arrayOfBooks).forEach((bookObj) => {
+    arrayOfBooks[bookObj].forEach((newArray) => {
+      totalBooks.push({ ...newArray, id: bookObj });
+    });
+  });
+  useEffect(() => {
+    dispatch(getBookFromApi());
+  }, [dispatch]);
+
   // add a functionality for "Remove" button click:
   // display books
+
   return (
     <>
-      {books.map((book) => (
+      {totalBooks.map((book) => (
         <div key={book.id}>
           <span>
             {book.title}
@@ -20,9 +32,9 @@ const DisplayBooks = () => {
           </span>
           <button
             type="button"
-            onClick={
-            () => dispatch(removeBook(book.id))
-          }
+            onClick={() => {
+              dispatch(removeBookFromApi(book.id));
+            }}
           >
             Remove
           </button>
