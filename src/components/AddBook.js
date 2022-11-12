@@ -1,9 +1,9 @@
 import { React, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { sendBookToApi } from '../redux/books/books';
+import './componentStyles/AddBook.modules.css';
 
 // add functionality for "Add new" button click:
-
 const AddBook = () => {
   const [author, setAuthor] = useState('');
   const [title, setTitle] = useState('');
@@ -37,25 +37,31 @@ const AddBook = () => {
   };
 
   return (
-    <form className="form-container" onSubmit={createdBook}>
-      <input
-        type="text"
-        className="input-text"
-        placeholder="Book title"
-        value={title}
-        onChange={onChangeTitle}
-      />
-      <input
-        type="text"
-        className="input-text"
-        placeholder="Book author"
-        value={author}
-        onChange={onChangeAuthor}
-      />
-      <button type="submit" className="input-submit">
-        Add Book
-      </button>
-    </form>
+
+    <div>
+      <div className="Title"> Add New Book</div>
+      <form className="form-container" onSubmit={createdBook}>
+        <input
+          type="text"
+          className="input-text"
+          placeholder="Book title"
+          value={title}
+          onChange={onChangeTitle}
+          required
+        />
+        <input
+          type="text"
+          className="input-text"
+          placeholder="Book author"
+          value={author}
+          onChange={onChangeAuthor}
+          required
+        />
+        <button type="submit" className="input-submit">
+          Add Book
+        </button>
+      </form>
+    </div>
   );
 };
 export default AddBook;
