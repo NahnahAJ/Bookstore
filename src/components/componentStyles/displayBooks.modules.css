@@ -9,12 +9,25 @@
   --font-stretch: normal;
   --font-style: normal;
   --line-height: normal;
+  --letter-spacing: normal;
+}
 
-  letter-spacing: normal;
+.display {
+  display: flex;
+}
+
+.fontStyles {
+  font-style: var(--font-style);
+  font-stretch: var(--font-stretch);
+  line-height: var(--line-height);
+  letter-spacing: var(--letter-spacing);
+}
+
+.align {
+  align-items: flex-start;
 }
 
 .Book-Card {
-  display: flex;
   justify-content: space-between;
   align-items: center;
   width: 62rem;
@@ -28,39 +41,38 @@
 }
 
 .Book-Card-Header {
-  display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  align-items: flex-start;
   padding-right: 12rem;
 }
 
 .buttons {
-  display: flex;
   justify-content: space-between;
-  align-items: flex-start;
   gap: 0.2rem;
   padding-top: 1rem;
+}
+
+.Category,
+.Book-title {
+  font-weight: bold;
 }
 
 .Category {
   color: #acacac;
   font-size: 0.8rem;
-  font-weight: bold;
   letter-spacing: 1px;
-  text-transform: capitalize;
 }
 
 .Book-title {
   height: 1.813rem;
   font-family: var(--font-family);
   font-size: 1.375rem;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: -0.2px;
   color: var(--black-two);
+}
+
+.Book-title,
+.Category,
+.Book-author {
   text-transform: capitalize;
 }
 
@@ -68,12 +80,7 @@
   font-family: var(--font-family);
   font-size: 0.875rem;
   font-weight: var(--font-weight);
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
   color: var(--light-blue);
-  text-transform: capitalize;
 }
 
 .Remove-Book,
@@ -94,20 +101,13 @@
 }
 
 .Progress-circle {
-  display: flex;
   gap: 1rem;
   justify-content: center;
   border-right: 1px solid var(--pale-grey);
 }
 
+.Completed-chapters,
 .progress-percent {
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-}
-
-.Completed-chapters {
-  display: flex;
   align-items: flex-start;
   flex-direction: column;
 }
@@ -119,11 +119,6 @@
   opacity: 0.5;
   font-family: var(--font-family-2);
   font-size: 0.875rem;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
 }
 
 .Line {
@@ -139,12 +134,14 @@
   margin: 0.063rem 5.75rem 0 0.688rem;
   font-family: var(--font-family-2);
   font-size: 2rem;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
   color: var(--black-two);
+}
+
+.chapter,
+.current-chapter,
+.percent,
+.progress {
+  font-weight: var(--font-weight);
 }
 
 .chapter {
@@ -154,12 +151,6 @@
   opacity: 0.5;
   font-family: var(--font-family);
   font-size: 0.813rem;
-  font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-transform: uppercase;
 }
 
 .current-chapter {
@@ -168,11 +159,10 @@
   margin: 0.438rem 6.813rem 0.25rem 3.688rem;
   font-family: var(--font-family);
   font-size: 1rem;
-  font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: -0.4px;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
 
 .Progress-btn {
@@ -183,10 +173,9 @@
   padding: 0.438rem 1.188rem 0.5rem 1.375rem;
   border-radius: 3px;
   background-color: #0290ff;
-  line-height: normal;
+  line-height: var(--line-height);
   text-align: center;
   color: #fff;
   border: none;
   cursor: pointer;
-  text-transform: uppercase;
 }

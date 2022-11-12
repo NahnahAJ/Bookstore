@@ -39,7 +39,7 @@ const AddBook = () => {
   return (
 
     <div>
-      <div className="Title"> Add New Book</div>
+      <div className="Title fontStyles"> Add New Book</div>
       <form className="form-container" onSubmit={createdBook}>
         <input
           type="text"

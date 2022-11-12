@@ -18,8 +18,8 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="navBar">
-      <span className="Bookstore-CMS">Bookstore-CMS</span>
+    <nav className="navBar display">
+      <span className="Bookstore-CMS fontStyles">Bookstore-CMS</span>
       {links.map((link) => (
         <span className="BOOK" key={link.id}>
           <NavLink to={link.path}>{link.name}</NavLink>

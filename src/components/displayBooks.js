@@ -25,12 +25,12 @@ const DisplayBooks = () => {
   return (
     <>
       {totalBooks.map((book) => (
-        <div key={book.id} className="Book-Card">
-          <div className="Book-Card-Header">
+        <div key={book.id} className="Book-Card display">
+          <div className="Book-Card-Header display align">
             <div className="Category">category</div>
-            <div className="Book-title">{book.title}</div>
-            <div className="Book-author">{book.author}</div>
-            <div className="buttons">
+            <div className="Book-title fontStyles">{book.title}</div>
+            <div className="Book-author fontStyles">{book.author}</div>
+            <div className="buttons display align">
               <button type="button" className="Comments">Comments</button>
               <button
                 className="Remove-Book"
@@ -44,7 +44,7 @@ const DisplayBooks = () => {
               <button type="button" className="Edit-Book">Edit</button>
             </div>
           </div>
-          <div className="Progress-circle">
+          <div className="Progress-circle display">
             <Progress
               type="circle"
               percent={75}
@@ -53,19 +53,19 @@ const DisplayBooks = () => {
               format={() => ''}
             />
 
-            <div className="progress-percent">
-              <span className="percent">
+            <div className="progress-percent display">
+              <span className="percent fontStyles">
                 {75}
                 %
               </span>
-              <span className="progress">Completed</span>
+              <span className="progress fontStyles">Completed</span>
             </div>
           </div>
 
-          <div className="Completed-chapters">
-            <span className="chapter">Current chapter</span>
-            <span className="current-chapter">Chapter 1</span>
-            <button type="button" className="Progress-btn">Update Progress</button>
+          <div className="Completed-chapters display">
+            <span className="chapter fontStyles uppercase">Current chapter</span>
+            <span className="current-chapter font-styles">Chapter 1</span>
+            <button type="button" className="Progress-btn uppercase">Update Progress</button>
           </div>
         </div>
       ))}
