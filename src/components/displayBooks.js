@@ -31,7 +31,9 @@ const DisplayBooks = () => {
             <div className="Book-title fontStyles">{book.title}</div>
             <div className="Book-author fontStyles">{book.author}</div>
             <div className="buttons display align">
-              <button type="button" className="Comments">Comments</button>
+              <button type="button" className="Comments">
+                Comments
+              </button>
               <button
                 className="Remove-Book"
                 type="button"
@@ -41,7 +43,9 @@ const DisplayBooks = () => {
               >
                 Remove
               </button>
-              <button type="button" className="Edit-Book">Edit</button>
+              <button type="button" className="Edit-Book">
+                Edit
+              </button>
             </div>
           </div>
           <div className="Progress-circle display">
@@ -63,9 +67,13 @@ const DisplayBooks = () => {
           </div>
 
           <div className="Completed-chapters display">
-            <span className="chapter fontStyles uppercase">Current chapter</span>
+            <span className="chapter fontStyles uppercase">
+              Current chapter
+            </span>
             <span className="current-chapter font-styles">Chapter 1</span>
-            <button type="button" className="Progress-btn uppercase">Update Progress</button>
+            <button type="button" className="Progress-btn uppercase">
+              Update Progress
+            </button>
           </div>
         </div>
       ))}
