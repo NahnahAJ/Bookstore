@@ -1,6 +1,6 @@
 .Title {
   height: 1.5rem;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-size: 1.25rem;
   font-weight: bold;
   font-stretch: normal;
@@ -13,14 +13,16 @@
 form {
   padding: 1.438rem 6.188rem 1.688rem 6.25rem;
 }
+
 .input-text {
   width: 23rem;
   height: 2.813rem;
-  margin: 0rem 2.125rem 0 0;
+  margin: 0 2.125rem 0 0;
   border-radius: 4px;
   border: solid 1px #e8e8e8;
   background-color: #fff;
 }
+
 .input-text::placeholder {
   color: #c4c4c4;
   padding-left: 1rem;

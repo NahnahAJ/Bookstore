@@ -1,11 +1,11 @@
 nav {
-    height: 5.938rem;
-    margin: 0 0 2.375rem;
-    padding: 1.438rem 6.188rem 1.688rem 6.25rem;
-    background-color: #fff;
-    display: flex;
-    align-items: center;
-    border: 2px solid rgba(128, 128, 128, 0.103);
+  height: 5.938rem;
+  margin: 0 0 2.375rem;
+  padding: 1.438rem 6.188rem 1.688rem 6.25rem;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  border: 2px solid rgba(128, 128, 128, 0.103);
 }
 
 .Bookstore-CMS {
@@ -22,7 +22,7 @@ nav {
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   height: 2.313rem;
 }
 
