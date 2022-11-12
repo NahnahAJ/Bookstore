@@ -1,6 +1,16 @@
+@import '~antd/dist/antd.css';
+
 *,
 *::before,
 *::after {
   margin: 0;
   box-sizing: border-box;
+}
+
+.main-container {
+  width: 75rem;
+  border: 2px solid rgba(255, 255, 255);
+  border-radius: 10px;
+  margin: 0 auto;
+  background-color: rgba(128, 128, 128, 0.103);
 }
