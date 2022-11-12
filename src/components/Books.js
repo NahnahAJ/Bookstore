@@ -7,20 +7,21 @@ import DisplayBooks from './displayBooks';
 
 const Books = () => (
   <>
-    <Navbar />
-    <Routes>
-      <Route
-        path="/"
-        element={(
-          <div>
-            <AddBook />
-            <h2>Redux Store:</h2>
-            <DisplayBooks />
-          </div>
+    <div className="main-container">
+      <Navbar />
+      <Routes>
+        <Route
+          path="/"
+          element={(
+            <div>
+              <DisplayBooks />
+              <AddBook />
+            </div>
           )}
-      />
-      <Route path="/categories" element={<Categories />} />
-    </Routes>
+        />
+        <Route path="/categories" element={<Categories />} />
+      </Routes>
+    </div>
   </>
 );
 
